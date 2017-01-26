@@ -1,0 +1,36 @@
+{{ partial "header.html" . }} {{ partial "subheader.html" . }}
+
+<section class="section hero is-dark">
+    <div class="container">
+        <h1 class="title">{{ .Title }}</h1>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="columns">
+            <div class="column is-one-quarter">
+                {{ partial "side-menu.html" . }}
+            </div>
+            <div class="column">
+                <div class="article content">
+                    {{ .Content }}
+                </div>
+
+                {{if .NextInSection}}
+                <div class="has-text-centered">
+                    <a class="button is-dark" href="{{.NextInSection.RelPermalink}}">
+                        <span>Continue to "{{.NextInSection.LinkTitle}}" </span>
+                        <span class="icon">
+                        <i class="fa fa-arrow-right"></i>
+                    </span>
+                    </a>
+                </div>
+                {{end}}
+
+            </div>
+        </div>
+    </div>
+</section>
+
+{{ partial "footer.html" . }}

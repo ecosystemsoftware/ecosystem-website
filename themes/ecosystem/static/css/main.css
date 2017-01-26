@@ -1,0 +1,118 @@
+body {
+      background-color: whitesmoke;
+ }
+
+ img {
+   max-height: 12em;
+ }
+
+ h1 {
+  font-family: 'Advent Pro', sans-serif;
+}
+
+.nav {
+   background-color: transparent;
+ }
+
+#hp .hero.super {
+  background-color: transparent;
+}
+
+#hp .hero.super .title {
+  font-size: 4rem;
+}
+
+#hp .hero.super .subtitle {
+  font-size: 2rem;
+}
+
+#open-source-projects img {
+  height: 5em;
+  margin: 1em;
+}
+
+.footer {
+  background-color: #7EC9A2
+}
+
+.footer .level {
+  margin-bottom: 0.5em;
+}
+
+.footer a {
+  color: inherit;
+}
+
+    .arrow {
+        height: auto;
+        width: 1em;
+        fill: white;  
+    }
+
+    .arrow.is-primary {
+        fill: #00d1b2;
+    }
+
+    .arrow.green {
+        fill: #019444;
+    }
+
+    .arrow.red {
+        fill: #BE1E2D;
+    }
+
+    .arrow.lightred {
+        fill: #DF8E96
+    }
+
+    .arrow.left {
+        transform: rotate( 180deg ) !important; 
+    }
+
+     .arrow.big {
+        height: 10em;
+        width: 100%;
+    }
+     
+
+    .article ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      margin-bottom: 2em;
+    }
+
+    .article ul li {
+      background: url("/images/arrow-right.svg") no-repeat left 7px;
+      padding-left: 2em;
+      margin-bottom: 0.5em;
+      padding-top: 0;
+}
+
+.animated.delay1 {
+    -webkit-animation-delay: 1s !important; /* Safari 4.0 - 8.0 */
+    animation-delay: 1s !important;
+}
+
+.animated.delay2 {
+    -webkit-animation-delay: 2s !important; /* Safari 4.0 - 8.0 */
+    animation-delay: 2s !important;
+}
+
+.animated.delay3 {
+    -webkit-animation-delay: 3s !important; /* Safari 4.0 - 8.0 */
+    animation-delay: 3s !important;
+}
+
+.animated.delay4 {
+    -webkit-animation-delay: 4s !important; /* Safari 4.0 - 8.0 */
+    animation-delay: 4s !important;
+}
+
+.animated.delay5 {
+    -webkit-animation-delay: 5s !important; /* Safari 4.0 - 8.0 */
+    animation-delay: 5s !important;
+}
+
+
+
