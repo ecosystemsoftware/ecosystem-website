@@ -1,0 +1,45 @@
+{{ partial "header.html" . }} {{ partial "subheader.html" . }}
+
+
+<section class="hero is-dark">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title">Get to know EcoSystem with some hands-on demos</h1>
+            <h2 class="subtitle">For each demo, you can access the public website as well as the admin panel. Click on the demo for more details.</h2>
+            <p>Oh, and ps, EcoSystem is modern tech, so please use a modern browser.</p>
+        </div>
+    </div>
+</section>
+
+
+<section class="section">
+    <div class="container">
+        <div class="columns">
+            {{ range .Data.Pages }}
+            <div class="column is-3 is-multiline">
+                <div class="card">
+                    <div class="card-image">
+                        <figure class="image is-4by3">
+                            <a href="{{ .RelPermalink }}"><img src="/images/{{ .Params.webscreenshot }}" alt="Image"></a>
+                        </figure>
+                    </div>
+                    <div class="card-content">
+                        <div class="media">
+                            <div class="media-content">
+                                <p class="title is-4">{{ .Title }}</p>
+                                <p class="subtitle is-6">@jpincas</p>
+                            </div>
+                        </div>
+
+                        <div class="content">
+                            {{ .Params.subtitle }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</section>
+
+{{ partial "footer.html" . }}

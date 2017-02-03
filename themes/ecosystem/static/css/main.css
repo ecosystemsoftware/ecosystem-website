@@ -114,5 +114,21 @@ body {
     animation-delay: 5s !important;
 }
 
+.license-text{
+    font-size: 0.8rem;
+}
+
+.license-text a {
+    font-size: 0.8rem;
+    text-decoration: underline;
+}
+
+.top-message {
+    background-color: #1a1a1a;
+    color:white;
+    padding:0.7em;
+    font-size: 0.9rem; 
+}
+
 
 
