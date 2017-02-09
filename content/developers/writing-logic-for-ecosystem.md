@@ -96,7 +96,7 @@ CREATE TRIGGER itemsxuser_init
 
 ### Step 5: My List ###
 
-Now we have the logic set up to only and always allow an anonymous user to see and manipulate his 'own list', any calls that that user makes via the API to the 'itemsxuser' table will only return his/her own items as a matter of default - the row-level-security will not allow it any other way.  So, we have our choice of using the JSON api or the private HTML api (which DOES go through auth) to return a list of selected items to our user, either as JSON which we render client-side, or as templated HTML rendered server-side.
+Now we have the logic set up to only and always allow an anonymous user to see and manipulate his 'own list', any calls that that user makes via the API to the 'itemsxuser' table will only return his/her own items as a matter of default - the row-level-security will not allow it any other way.  So, we have our choice of using the JSON api or the private HTML APIs (which DOES go through auth) to return a list of selected items to our user, either as JSON which we render client-side, or as templated HTML rendered server-side.
 
 ### Summary ###
 
