@@ -1,0 +1,25 @@
+{{ partial "header.html" . }} {{ partial "subheader.html" . }}
+
+<section class="section hero is-dark">
+    <div class="container">
+        <h1 class="title">{{ .Title }}</h1>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="columns">
+            <div class="column is-one-quarter">
+                {{ partial "side-menu-docs.html" . }}
+            </div>
+            <div class="column">
+                <div class="article content">
+                    {{ .Content }}
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+{{ partial "footer.html" . }}

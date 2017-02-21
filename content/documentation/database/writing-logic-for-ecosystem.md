@@ -1,5 +1,5 @@
 +++
-date = "2017-02-09T11:13:52+01:00"
+date = "2017-02-04T11:13:52+01:00"
 title = "Writing logic for EcoSystem"
 
 +++
