@@ -15,55 +15,31 @@ This is a step-by-step guide which should get you going with EcoSystem in around
 
 ### Step 1: Install EcoSystem
 
-Fetch the source code and dependencies and compile into an executable which will go into your $GOPATH/bin directory:
-
-```
-$ go get github.com/ecosystemsofware/ecosystem
-```
-
-Assuming your [$GOPATH/bin is part of your PATH](https://golang.org/doc/install), you should now be able to run 'ecosystem' from anywhere on the command line.
+To start with, fetch the source code and dependencies and compile into an executable which will go into your $GOPATH/bin directory.  That's just `go get github.com/ecosystemsofware/ecosystem`.  Assuming your [$GOPATH/bin is part of your PATH](https://golang.org/doc/install), you should now be able to run 'ecosystem' from anywhere on the command line.
 
 ### Step 2:  Create a database
 
-Log into your Postgres server and create a new database.  I'll assume you'll call it `test`, but you don't have to.
+Log into your Postgres server and create a new database. Call it *testdb* - that way you won't have to make any changes to the default database configuration.
 
 ### Step 3: Create a project folder
 
-Make a new folder from which to run the server and cd into it:
-
-```
-$ mkdir test
-$ cd test
-```
+Make a new folder from which to run the server and `cd` into it:
 
 ### Step 4: Create a configuration file
 
-Generate a default config.json file which we'll use to set up the database connection:
-
-```
-$ ecosystem new configfile
-```
+Just type `ecosystem` to get going.  Since you don't have a defualt *config,json*, EcoSystem will generate one for you.
 
 ### Step 5: Configure the database connection
 
-Open `config.json` and edit the database connection parameters so EcoSystem can connect to the `test` database you created.  If you're working locally, you'll probably only have to change the database name and disable SSL mode.
+If you're working locally, the defaults will probably just work out-of-the-box.  Otherwise, open *config.json* and edit the database connection parameters.
 
 ### Step 6: Initialise EcoSystem
 
-EcoSystem needs to create a number of built in tables, roles, permissions and functions, as well as a few folders:
-
-```
-$ ecosystem init
-```
-If all goes well, you'll see messages confirming successful initialisation.
+EcoSystem needs to create a number of built-in tables, roles, permissions and functions, as well as a few folders, so just type `ecosystem init` to have it do that for you.
 
 ### Step 7: Create an admin user
 
-Set yourself up as an admin user with full permissions:
-
-```
-$ ecosystem new user [your@email.com] --admin
-```
+Set yourself up as an admin user with full permissions by typing `ecosystem new user [your@email.com] --admin`
 
 ### Step 8: Download and install a bundle
 
@@ -76,34 +52,10 @@ $ cd ..
 $ ecosystem install eco_bundle_dogshelter --demodata
 ```
 
-There's nothing magic going on under the hood here, we simply created a new folder in bundles called 'eco_bundle_dogshelter' which will be the name of the bundle, and copied in some files.  We then ran the database code in `install.sql` to set up the bundle's data and logic.  Finally we ran `demodata.sql` to install the bundle's demo data.  Everything else, like website template code and admin panel config code, lives in the bundle folder and the EcoSystem server knows to find it there.
-
 ### Step 9: Download the EcoSystem admin panel app
 
-From your main project folder, clone the EcoSystem admin panel and install Polymer dependencies:
-
-```
-$ git clone git@github.com:ecosystemsoftware/ecosystem-admin.git
-$ cd ecosystem-admin
-$ bower install
-$ cd..
-```
-
-### Step 10: Set up the bundle imports
-
-*Note:  We working on a way of automating this step - until now, it's manual I'm afraid.*
-
-The bundle contains various setting files for the admin panel, for them to take effect, you'll need the admin panel to import them.  The procedure is as follows:
-
-1.  Open the file `bundles/eco_bundle_dogshelter/admin-panel/bundle-imports.html`
-2.  Copy all the lines that start `<link rel="import"...`
-3.  Open the file `ecosystem-admin/src/eco-bundle-imports.html`
-4.  Paste the lines previously copied.
+From your main project folder, clone the EcoSystem admin panel repository by typing `git clone git@github.com:ecosystemsoftware/ecosystem-admin.git`
 
 ### Step 10: Run the server
 
-Run the server in 'demo' mode (disabling authorisation).  You need to supply a 'secret' which is used by the server for encryption.  Here I use 'secret', but you can use anything.  Do this from the main project directory.
-
-```
-$ ecosystem serve -s=secret -d
-```
+Run the server in 'demo' mode (disabling authorisation) with `ecosystem serve -s=secret -d`

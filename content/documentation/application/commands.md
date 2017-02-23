@@ -15,21 +15,23 @@ Type `ecosystem --help` for a list of commands and available flags.
 ### Available Commands and Flags
 
 
-| Command     | Argument              | Flags                                    |                                           |
-| ----------- | ------------ | ---------------------------------------- | ---------------------------------------- |
-| All         |              | -p, —pgpw                                | **Optional:** Postgres super user password, if required |
-| `init`      | `db`         |                                          | Performs the DB initialisation for built-in tables, roles and permissions |
-| `init`      | `folders`    |                                          | Creates the EcoSystem folder structure   |
-| `install`   | `[bundle]`   | —demodata; -r, —reinstall                | Install named EcoSystem bundle.  Bundle folder must be downloaded/cloned into /bundles first. **Optional:** Include demo data with the bundle install. **Optional:** Uninstall the bundle before installing |
-| `uninstall` | `[bundle]`   |                                          | Uninstall named EcoSystem bundle.  Will not delete the bundle folder from /bundles |
-| `new`       | `bundle`     |                                          | Creates the folder structure for a new EcoSystem bundle |
-| `new`       | `configfile` |                                          | Creates a config.json with all default attributes |
-| `new`       | `user`       | —admin                                   | Creates a new user. **Optional:** make user with admin permissions |
-| `serve`     |              | -d, —demomode; -a, —noadminpanel; -w, —nowebsite; -s, —secret; —smtppw | Starts the EcoSystem server. **Optional:** Run the server in demo mode, allowing users to log in with magic code '123456', rather than having to request a code. **Optional:** Use flags to disable the admin panel and/or website. **Required:** Encryption secret for JWT signing.  Remember to use the same secret every time you start the server, or JWTs previously issued will not be valid. |
+|             |            | Flags                                    |                                          |
+| ----------- | ---------- | ---------------------------------------- | ---------------------------------------- |
+| All         |            | -p, —pgpw                                | **Optional:** Postgres super user password, if required |
+|             |            | -c, —configfile                          | **Optional:** Specify a different configuration file from the default *config.json* |
+| `init`      | `db`       |                                          | Performs the DB initialisation for built-in tables, roles and permissions |
+| `init`      | `folders`  |                                          | Creates the EcoSystem folder structure   |
+| `install`   | `[bundle]` | —demodata; -r, —reinstall                | Install named EcoSystem bundle.  Bundle folder must be downloaded/cloned into /bundles first. **Optional:** Include demo data with the bundle install. **Optional:** Uninstall the bundle before installing |
+| `uninstall` | `[bundle]` |                                          | Uninstall named EcoSystem bundle.  Will not delete the bundle folder from /bundles |
+| `new`       | `bundle`   |                                          | Creates the folder structure for a new EcoSystem bundle |
+| `new`       | `user`     | —admin                                   | Creates a new user. **Optional:** make user with admin permissions |
+| `serve`     |            | -d, —demomode; -a, —noadminpanel; -w, —nowebsite; -s, —secret; —smtppw | Starts the EcoSystem server. **Optional:** Run the server in demo mode, allowing users to log in with magic code '123456', rather than having to request a code. **Optional:** Use flags to disable the admin panel and/or website. **Required:** Encryption secret for JWT signing.  Remember to use the same secret every time you start the server, or JWTs previously issued will not be valid. |
 
 Refer to the step-by-step [Getting Started Guide](/developers/getting-started), for an overview of the correct order in which to run these commands when starting a new project.
 
 ### Detailed Explanation of Commands
+
+`ecosystem ` on its own, with no command or arguments, verifies that the configuration file is present and readable.  If not, a new default *config.json* will be created for you, with all possible attributes.
 
 `ecosystem init` on its own runs the complete initialisation procedure, which consists of `ecosystem init folders` and `ecosystem init db`.  You can run each of those commands inividually if required.
 
@@ -59,7 +61,6 @@ Installation means simply running the *install.sql* file from the bundle folder.
 
 `ecosystem uninstall [bundle]` uninstalls the bundle by removing the bundles's schema from the database.
 
-`ecosystem new configfile` creates a config.json with all of the possible attributes - use it as starter template rather than creating your own from scratch.
 
 `ecosystem new user [email@address]` is a quick way to add users without having to go to the database.  Give the user admin privileges with `--admin`
 
