@@ -4,7 +4,7 @@ title = "Introduction"
 
 +++
 
-EcoSystem is a platform that allows you to quickly develop completely custom data-driven websites, web-applications and backend systems.  EcoSystem doesn't assume anything about the data structure or logic of your business because you code it directly and freely at the database layer using the power of PostgreSQL.  EcoSystem then augments your database layer with a generic web and JSON API server written in Go and a generic backend administration panel created with Polymer, giving you a *bridge* to your data and logic with minial boilerplate.
+EcoSystem is a platform that allows you to quickly develop completely custom data-driven websites, web-applications and backend systems.  EcoSystem doesn't assume anything about the data structure or logic of your business because you code it directly and freely at the database layer using the power of PostgreSQL.  EcoSystem then augments your database layer with a generic web and JSON API server written in Go and a generic backend administration panel created with Polymer, giving you a *bridge* to your data and logic with minimal boilerplate.
 
 
 The EcoSystem platform consists of two parts - [an HTML/JSON server application written in Go](https://github.com/ecosystemsoftware/ecosystem) and a [configurable admin panel created with Polymer](https://github.com/ecosystemsoftware/ecosystem-admin).
