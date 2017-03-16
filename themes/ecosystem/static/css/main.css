@@ -7,7 +7,7 @@ body {
  }
 
  h1 {
-  font-family: 'Advent Pro', sans-serif;
+  font-family: 'Audiowide', sans-serif;
 }
 
 .nav {
@@ -32,7 +32,7 @@ body {
 }
 
 .footer {
-  background-color: #7EC9A2
+    background-color: whitesmoke;
 }
 
 .footer .level {
@@ -50,19 +50,19 @@ body {
     }
 
     .arrow.is-primary {
-        fill: #00d1b2;
+        fill: #8DBADD;
     }
 
     .arrow.green {
-        fill: #019444;
+        fill: #2B3990;
     }
 
     .arrow.red {
-        fill: #BE1E2D;
+        fill: #2B3990;
     }
 
     .arrow.lightred {
-        fill: #DF8E96
+        fill: #2B3990
     }
 
     .arrow.left {
@@ -75,19 +75,33 @@ body {
     }
      
 
-    .article ul {
+    .article ul, .prettylist ul {
       list-style-type: none;
       padding: 0;
       margin: 0;
       margin-bottom: 2em;
     }
 
-    .article ul li {
+    .article ul li, .prettylist ul li {
       background: url("/images/arrow-right.svg") no-repeat left 7px;
       padding-left: 2em;
       margin-bottom: 0.5em;
       padding-top: 0;
 }
+
+
+    /*.prettylist ul {
+      list-style-type: square;
+      padding: 0;
+      margin: 0;
+      margin-bottom: 2em;
+    }
+
+    .prettylist ul li {
+      padding-left: 0.5em;
+      margin-bottom: 0.5em;
+      padding-top: 0.25em;
+}*/
 
 .animated.delay1 {
     -webkit-animation-delay: 1s !important; /* Safari 4.0 - 8.0 */
